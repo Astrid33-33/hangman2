@@ -1,3 +1,4 @@
+import os
 import random
 import string
 
@@ -6,7 +7,7 @@ from flask import Flask, jsonify, render_template, request, session
 from words import WORDS
 
 app = Flask(__name__)
-app.secret_key = "hangman-dev-secret"  # fine for local play, not for production
+app.secret_key = os.environ.get("SECRET_KEY", "hangman-dev-secret")
 
 MAX_WRONG = 8
 
@@ -18,7 +19,6 @@ def new_game_state():
         "guessed": [],
         "wrong_count": 0,
     }
-
 
 def public_state(state):
     secret_word = state["secret_word"]
