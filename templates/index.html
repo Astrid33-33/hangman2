@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hangman</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Hangman</h1>
+
+  <div class="board">
+    <div class="man-column">
+      <svg viewBox="0 0 200 220" class="gallows">
+        <line x1="10" y1="210" x2="120" y2="210" stroke="black" stroke-width="4"/>
+        <g id="part-1">
+          <line x1="40" y1="210" x2="40" y2="10" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-2">
+          <line x1="40" y1="10" x2="130" y2="10" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-3">
+          <line x1="130" y1="10" x2="130" y2="40" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-4">
+          <circle cx="130" cy="60" r="20" fill="none" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-5">
+          <line x1="130" y1="80" x2="130" y2="140" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-6">
+          <line x1="130" y1="95" x2="105" y2="120" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-7">
+          <line x1="130" y1="95" x2="155" y2="120" stroke="black" stroke-width="4"/>
+        </g>
+        <g id="part-8">
+          <line x1="130" y1="140" x2="105" y2="180" stroke="black" stroke-width="4"/>
+          <line x1="130" y1="140" x2="155" y2="180" stroke="black" stroke-width="4"/>
+        </g>
+      </svg>
+      <div id="wrong-count">Wrong guesses: 0 / 8</div>
+      <div id="message"></div>
+      <button id="new-game">New Game</button>
+    </div>
+
+    <div class="word-column">
+      <div id="word-display" class="word-display"></div>
+      <div id="alphabet" class="alphabet"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background: #f5f5f5;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.man-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallows {
+  width: 200px;
+  height: 220px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.gallows g {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.gallows g.visible {
+  opacity: 1;
+}
+
+#wrong-count {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#message {
+  min-height: 24px;
+  margin-top: 6px;
+  color: #333;
+}
+
+#new-game {
+  margin-top: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.word-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.word-display {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.word-display .slot {
+  width: 28px;
+  border-bottom: 3px solid #333;
+  text-align: center;
+}
+
+.alphabet {
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 6px;
+}
+
+.alphabet button {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: white;
+}
+
+.alphabet button:disabled {
+  cursor: not-allowed;
+}
+
+.alphabet button.correct {
+  background: #a5e6a5;
+  border-color: #4caf50;
+}
+
+.alphabet button.wrong {
+  background: #f2a5a5;
+  border-color: #e53935;
+}
